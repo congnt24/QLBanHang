@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<BorderPane prefHeight="500.0" prefWidth="800.0" stylesheets="@../controller/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.QLController">
+   <center>
+      <TabPane prefHeight="393.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab text="Nhập Hàng Hóa">
+               <content>
+                  <GridPane>
+                     <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="225.0" text="Nhà Sản Xuất : " textAlignment="RIGHT" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="225.0" text="Dã Trả : " textAlignment="RIGHT" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="225.0" text="Tổng Số Tền : " textAlignment="RIGHT" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="225.0" text="Số Lượng : " textAlignment="RIGHT" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="225.0" text="Giá : " textAlignment="RIGHT" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="225.0" text="Tên Hàng Hóa : " textAlignment="RIGHT" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="amountsale" layoutX="235.0" layoutY="13.0" onKeyReleased="#setAmountSale" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="datra" layoutX="235.0" layoutY="99.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="sumpricesale" alignment="CENTER" prefHeight="17.0" prefWidth="415.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#storage" prefHeight="35.0" prefWidth="380.0" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="145.0" prefHeight="25.0" prefWidth="225.0" stylesheets="@../controller/application.css" text="ID : " textAlignment="RIGHT" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#newSale" text="New Sale" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="pricesale" alignment="CENTER" layoutX="183.0" layoutY="214.0" prefHeight="17.0" prefWidth="415.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="producersale" alignment="CENTER" layoutX="193.0" layoutY="199.0" prefHeight="17.0" prefWidth="415.0" text="Apple" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="idsale" prefHeight="30.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="namesale" prefHeight="29.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="alert" alignment="CENTER" layoutX="10.0" layoutY="244.0" prefHeight="27.0" prefWidth="403.0" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="alertamount" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="64.0" prefHeight="25.0" prefWidth="225.0" textAlignment="RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="322.0" minWidth="10.0" prefWidth="225.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="553.0" minWidth="10.0" prefWidth="378.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="553.0" minWidth="10.0" prefWidth="122.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab text="Xuất Hàng Hóa">
+               <content>
+                  <GridPane>
+                     <children>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="225.0" text="Nhà Sản Xuất : " textAlignment="RIGHT" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="225.0" text="Dã Trả : " textAlignment="RIGHT" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="225.0" text="Tổng Số Tền : " textAlignment="RIGHT" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="225.0" text="Số Lượng : " textAlignment="RIGHT" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="225.0" text="Giá : " textAlignment="RIGHT" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="225.0" text="Tên Hàng Hóa : " textAlignment="RIGHT" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="amountSale" layoutX="235.0" layoutY="13.0" onKeyReleased="#setAmountSale2" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="datraSale" layoutX="235.0" layoutY="99.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="sumpriceSale" alignment="CENTER" prefHeight="17.0" prefWidth="415.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#xuat" prefHeight="33.0" prefWidth="300.0" text="Xuất" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="19.0" prefHeight="25.0" prefWidth="225.0" text="Tên Khách Hàng : " textAlignment="RIGHT" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onAction="#newCustomer" text="New Customer" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="63.0" prefHeight="25.0" prefWidth="225.0" text="ID : " textAlignment="RIGHT" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="57.0" prefHeight="25.0" prefWidth="225.0" text="Address : " textAlignment="RIGHT" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="address" alignment="CENTER" layoutX="10.0" layoutY="112.0" prefHeight="25.0" prefWidth="380.0" text="Address : " textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="idCustomer" onAction="#idChange" prefHeight="28.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="nameCustomer" layoutX="169.0" layoutY="47.0" onAction="#nameChange" prefHeight="30.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="producerSale" alignment="CENTER" layoutX="10.0" layoutY="350.0" prefHeight="27.0" prefWidth="360.0" text="Nhà Sản Xuất" textAlignment="RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="idSale" layoutX="246.0" layoutY="92.0" prefHeight="28.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Label layoutX="10.0" layoutY="128.0" prefHeight="27.0" prefWidth="146.0" text="ID" textAlignment="RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="nameSale" layoutX="246.0" layoutY="55.0" prefHeight="27.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="priceSale" alignment="CENTER" layoutX="246.0" layoutY="276.0" prefHeight="17.0" prefWidth="415.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="alert1" alignment="CENTER" prefHeight="27.0" prefWidth="403.0" textAlignment="RIGHT">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="alertamount1" alignment="CENTER" prefHeight="25.0" prefWidth="225.0" text="a" textAlignment="RIGHT" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="322.0" minWidth="10.0" prefWidth="161.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="553.0" minWidth="10.0" prefWidth="283.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="553.0" minWidth="10.0" prefWidth="133.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab text="QL Hàng Hóa">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="qlhh" prefHeight="446.0">
+                           <columns>
+                              <TableColumn fx:id="qlhhc01" prefWidth="112.0" text="Mã Hàng Hóa" />
+                              <TableColumn fx:id="qlhhc02" prefWidth="150.0" text="Tên Hàng Hóa" />
+                              <TableColumn fx:id="qlhhc03" prefWidth="106.0" text="Giá" />
+                              <TableColumn fx:id="qlhhc04" prefWidth="150.0" text="Nhà Cung Cấp" />
+                           </columns>
+                        </TableView>
+                        <GridPane prefWidth="300.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Details:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label layoutX="10.0" layoutY="58.0" text="Id : " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label layoutX="10.0" layoutY="170.0" text="Name : " GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label layoutX="10.0" layoutY="281.0" text="Prices : " GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label layoutX="10.0" layoutY="263.0" text="Producer : " GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Button mnemonicParsing="false" onAction="#editSale" text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Button layoutX="10.0" layoutY="407.0" mnemonicParsing="false" onAction="#deleteSale" text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Button mnemonicParsing="false" onAction="#newSale" text="New" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                              <Label fx:id="idLabel" text="label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label fx:id="pricesLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label fx:id="producerLabel" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </HBox>
+               </content>
+            </Tab>
+            <Tab text="QL Khác Hàng">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="qlkh">
+                           <columns>
+                              <TableColumn fx:id="qlkhc01" prefWidth="100.0" text="ID" />
+                              <TableColumn fx:id="qlkhc02" prefWidth="150.0" text="Tên Khách Hàng" />
+                              <TableColumn fx:id="qlkhc03" minWidth="0.0" prefWidth="150.0" text="Address" />
+                              <TableColumn fx:id="qlkhc04" prefWidth="150.0" text="Khách Hàng Nợ" />
+                           </columns>
+                        </TableView>
+                        <GridPane prefWidth="250.0">
+                           <children>
+                              <Label text="Details:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label layoutX="10.0" layoutY="58.0" text="Id : " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label layoutX="10.0" layoutY="170.0" text="Name : " GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label layoutX="10.0" layoutY="281.0" text="Address : " GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Button mnemonicParsing="false" onAction="#editCustomer" text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Button layoutX="10.0" layoutY="407.0" mnemonicParsing="false" onAction="#deleteCustomer" text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Button mnemonicParsing="false" onAction="#newCustomer" text="New" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                              <Label fx:id="idLabel1" text="label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label fx:id="nameLabel1" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label fx:id="addressLabel1" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Label text="Còn Nợ : " GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <Label fx:id="connoLabel1" layoutX="134.0" layoutY="227.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                              <Button layoutX="72.0" layoutY="321.0" mnemonicParsing="false" onAction="#khthanhtoan" prefHeight="25.0" prefWidth="123.0" text="Thanh Toán" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </HBox>
+               </content>
+            </Tab>
+            <Tab text="QL Nhà Cung Cấp">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="qlncc">
+                           <columns>
+                              <TableColumn fx:id="qlnccc01" prefWidth="100.0" text="ID" />
+                              <TableColumn fx:id="qlnccc02" prefWidth="250.0" text="Tên Nhà Cung Cấp" />
+                              <TableColumn fx:id="qlnccc03" prefWidth="200.0" text="Còn Nợ" />
+                           </columns>
+                        </TableView>
+                        <GridPane prefWidth="250.0">
+                           <children>
+                              <Label text="Details:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label layoutX="10.0" layoutY="58.0" text="Id : " GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label layoutX="10.0" layoutY="170.0" text="Name : " GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Button mnemonicParsing="false" onAction="#editProducer" text="Edit" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Button layoutX="10.0" layoutY="407.0" mnemonicParsing="false" onAction="#deleteProducer" text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                              <Button mnemonicParsing="false" onAction="#newProducer" text="New" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                              <Label fx:id="idLabel2" text="label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Label fx:id="nameLabel2" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label layoutX="72.0" layoutY="177.0" text="Còn Nợ : " GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="connoLabel2" layoutX="134.0" layoutY="177.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                              <Button layoutX="72.0" layoutY="321.0" mnemonicParsing="false" onAction="#thanhtoan" prefHeight="25.0" prefWidth="127.0" text="Quyết Toán" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                           </children>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </HBox>
+               </content>
+            </Tab>
+            <Tab text="QL Kho">
+               <content>
+                  <TableView fx:id="qlk">
+                     <columns>
+                        <TableColumn fx:id="qlkc01" prefWidth="96.0" text="Mã Xuất Nhập" />
+                        <TableColumn fx:id="qlkc02" prefWidth="70.0" text="Số Lượng" />
+                        <TableColumn fx:id="qlkc03" prefWidth="94.0" text="Giá" />
+                        <TableColumn fx:id="qlkc04" prefWidth="97.0" text="Ngày Cập Nhật" />
+                        <TableColumn fx:id="qlkc05" prefWidth="115.0" text="Tên Hàng Hóa" />
+                        <TableColumn fx:id="qlkc06" prefWidth="128.0" text="Tên Nhà Cung Cấp" />
+                     </columns>
+                  </TableView>
+               </content>
+            </Tab>
+            <Tab text="Xuất">
+               <content>
+                  <TableView fx:id="qlxuat">
+                              <columns>
+                                 <TableColumn fx:id="qlxuatc01" prefWidth="96.0" text="Mã Xuất " />
+                                 <TableColumn fx:id="qlxuatc02" prefWidth="75.0" text="Khách hàng" />
+                                 <TableColumn fx:id="qlxuatc03" prefWidth="115.0" text="Tên Hàng Hóa" />
+                                 <TableColumn fx:id="qlxuatc04" prefWidth="70.0" text="Số Lượng" />
+                                 <TableColumn fx:id="qlxuatc05" prefWidth="94.0" text="Giá" />
+                                 <TableColumn fx:id="qlxuatc06" prefWidth="97.0" text="Thành tiền" />
+                                 <TableColumn fx:id="qlxuatc07" prefWidth="128.0" text="Đã trả" />
+                        		<TableColumn fx:id="qlxuatc08" prefWidth="100.0" text="Nợ" />
+                        		<TableColumn fx:id="qlxuatc09" prefWidth="100.0" text="Ngày trả" />
+                              </columns>
+               	</TableView>
+               </content>
+            </Tab>
+            <Tab text="Nhập">
+               <content>
+                  <TableView fx:id="qlnhap">
+                              <columns>
+                                 <TableColumn fx:id="qlnhapc01" prefWidth="96.0" text="Mã Xuất " />
+                                 <TableColumn fx:id="qlnhapc02" prefWidth="75.0" text="Nhà Cung Cấp" />
+                                 <TableColumn fx:id="qlnhapc03" prefWidth="115.0" text="Tên Hàng Hóa" />
+                                 <TableColumn fx:id="qlnhapc04" prefWidth="70.0" text="Số Lượng" />
+                                 <TableColumn fx:id="qlnhapc05" prefWidth="94.0" text="Giá" />
+                                 <TableColumn fx:id="qlnhapc06" prefWidth="97.0" text="Thành tiền" />
+                                 <TableColumn fx:id="qlnhapc07" prefWidth="128.0" text="Đã trả" />
+                        		<TableColumn fx:id="qlnhapc08" prefWidth="100.0" text="Nợ" />
+                        		<TableColumn fx:id="qlnhapc09" prefWidth="100.0" text="Ngày trả" />
+                              </columns>
+               	</TableView>
+               </content>
+            </Tab>
+            <Tab text="Quyết Toán">
+               <content>
+                  <TableView fx:id="qlqt" prefHeight="446.0" prefWidth="550.0">
+                         <columns>
+                             <TableColumn fx:id="qlqtc01" prefWidth="75.0" text="ID" />
+                           <TableColumn fx:id="qlqtc02" prefWidth="151.0" text="Type" />
+                             <TableColumn fx:id="qlqtc03" prefWidth="155.0" text="Tên" />
+                             <TableColumn fx:id="qlqtc04" prefWidth="84.0" text="Nợ" />
+                           <TableColumn fx:id="qlqtc05" minWidth="0.0" prefWidth="98.0" text="Đã Trả" />
+                             <TableColumn fx:id="qlqtc07" prefWidth="113.0" text="Còn Nợ" />
+                             <TableColumn fx:id="qlqtc06" minWidth="0.0" prefWidth="100.0" text="Thời Gian" />
+                         </columns>
+                   </TableView>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+   <top>
+      <MenuBar styleClass="label-bright" stylesheets="@../controller/application.css" BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#newSale" text="Thêm Hàng Hóa" />
+                  <MenuItem mnemonicParsing="false" onAction="#newCustomer" text="Thêm Khách Hàng" />
+                  <MenuItem mnemonicParsing="false" onAction="#newProducer" text="Thêm Nhà Cung Cấp" />
+                  <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

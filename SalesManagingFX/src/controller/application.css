@@ -1,0 +1,157 @@
+
+.root {
+	-fx-background-color: rgb(192,192,192);
+}
+.shiny-orange {
+    -fx-background-color:
+        linear-gradient(#ffd65b, #e68400),
+        linear-gradient(#ffef84, #f2ba44),
+        linear-gradient(#ffea6a, #efaa22),
+        linear-gradient(#ffe657 0%, #f8c202 50%, #eea10b 100%),
+        linear-gradient(from 0% 0% to 15% 50%, rgba(255,255,255,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 30;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-text-fill: #654b00;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+}
+
+
+.welcome-text {
+   -fx-font-size: 32px;
+   -fx-font-family: "Arial Black";
+   -fx-fill: #818181;
+   -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+ 
+.text-field:focused {
+	-fx-background-color: rgb(255,255,128);
+	-fx-background-insets: 0, 1, 2;
+	-fx-background-radius: 1;
+}
+
+.text-field{
+	-fx-border-color: null;
+	-fx-border-radius: 0;
+	-fx-select-on-focus:false;
+}
+.text-field.error {
+  -fx-text-box-border: red ;
+  -fx-focus-color: red ;
+}
+
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+
+
+
+
+ 
+.menu {
+    -fx-text-fill: #ffffff;
+	-fx-border-color: transparent;
+}
+ 
+.menu-item {
+    -fx-text-fill: #ffffff;
+    -fx-background-color: rgb(192,192,192);
+	-fx-border-color: rgb(192,192,192);
+}
+
+.combo-box .list-cell 
+{
+-fx-background: rgb(0,0,255);
+-fx-background-color: transparent ;
+-fx-text-fill: -fx-text-base-color;
+-fx-padding: 3 0 2 7;
+-fx-cell-size: 1.66667em; 
+}
+.combo-box-popup .list-view 
+{
+-fx-background-color: white, white;
+-fx-background-insets: 0, 1;
+-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+}
+
+
+.label {
+    -fx-font-size: 12pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: rgb(0,0,0);
+    -fx-opacity: 0.6;
+}
+
+.label-bright {
+    -fx-font-size: 10pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: rgb(0,0,0);
+    -fx-opacity: 1;
+}
+
+.label-header {
+    -fx-font-size: 32pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: rgb(0,0,0);
+    -fx-opacity: 1;
+}
+
+
+.table-view {
+    -fx-base: #1d1d1d;
+    -fx-control-inner-background: rgb(192,192,192);
+    -fx-background-color: rgb(192,192,192);
+    -fx-table-cell-border-color: transparent;
+    -fx-table-header-border-color: transparent;
+    -fx-padding: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-size: 35;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+    -fx-border-color: 
+        transparent
+        transparent
+        derive(-fx-base, 80%) 
+        transparent;
+    -fx-border-insets: 0 10 1 0;
+}
+.table-cell {
+    -fx-font-size: 15px;
+}
+.table-view .table-row-cell{
+	-fx-cell-size: 30px;
+}
+
+.table-view:focused .table-row-cell:filled:focused:selected {
+    -fx-background-color: -fx-focus-color;
+}
+.tab {
+}
+.tab .tab-label {
+    -fx-skin: "com.sun.javafx.scene.control.skin.LabelSkin";
+    -fx-background-color: transparent;    
+    -fx-alignment: CENTER;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: -fx-text-base-color;
+    -fx-font-size: 16px; /* all the same except this newly added one */
+}
+
+
+
+

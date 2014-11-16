@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ThanhToanController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="155.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="217.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="110.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="158.0" text="Type : " GridPane.rowIndex="1">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" mnemonicParsing="false" onAction="#thanhtoan" prefHeight="25.0" prefWidth="125.0" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" prefHeight="35.0" prefWidth="400.0" text="Thanh Toán" textFill="#0700fa" GridPane.columnSpan="2">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="164.0" prefHeight="27.0" prefWidth="157.0" text="Nhà Sản Xuất : " GridPane.rowIndex="2">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="doituong" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label fx:id="alert" prefHeight="17.0" prefWidth="242.0" text="Label" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="loai" layoutX="165.0" layoutY="165.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="164.0" prefHeight="27.0" prefWidth="157.0" text="Nợ : " GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="conno" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="231.0" prefHeight="27.0" prefWidth="157.0" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="197.0" prefHeight="27.0" prefWidth="157.0" text="Số tiên : " GridPane.rowIndex="4">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="sotien" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <ComboBox fx:id="id" layoutX="137.0" layoutY="141.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+   </children>
+</GridPane>
